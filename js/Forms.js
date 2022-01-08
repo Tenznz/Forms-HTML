@@ -21,6 +21,20 @@ email.addEventListener('input',function(){
     }
 });
 
+const phone = document.querySelector('#tel');
+const errorTel = document.querySelector('.tel-error');
+phone.addEventListener('input',function(){
+    let phoneRegex = RegExp('^[+][0-9]{1,2}?[\\s,-][7-9]{1}[0-9]{9}$');
+    if(phoneRegex.test(phone.value)){
+        errorTel
+    .textContent="";
+    }else{
+        errorTel
+    .textContent="Phone number is incorrect";
+    }
+});
+
+
 const salary = document.querySelector('#salary');
 const output = document.querySelector('.salary-output');
 output.textContent = salary.value;
